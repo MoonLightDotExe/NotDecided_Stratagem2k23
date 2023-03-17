@@ -8,36 +8,39 @@ import './Home.css'
 import useHospital from '../../../context/HospitalContext';
 
 function Home() {
-    const {hospital} = useHospital()
-    if(hospital)
-    return (
-        <>
-            <div className="contain">
-                <div className="primary--text"> Hospitals </div>
-                <div className="cards">
-                    <ul>
-                        {
-                            hospital.map(
-                                (ele) => {
-                                    return (
-                                        <li key={hospital._id}>
-                                            <Card
-                                                name={ele.name}
-                                                type={ele.type}
-                                                queue={ele.queue}
-                                                location={ele.address}
-                                                id ={ele.id}
-                                            />
-                                        </li>
-                                    )
-                                }
-                            )
-                        }
-                    </ul>
+    const { emerhospital } = useHospital()
+    if (emerhospital)
+        return (
+            <>
+
+                <div className="contain">
+                    <div className="primary--text"> Hospitals </div>
+                    <div className="cards">
+                        <ul>
+                            {
+                                emerhospital.map(
+                                    (ele) => {
+                                        return (
+                                            <>
+                                                <li key={emerhospital._id}>
+                                                    <Card
+                                                        name={ele.name}
+                                                        type={ele.type}
+                                                        queue={ele.queue}
+                                                        location={ele.address}
+                                                        id={ele.id}
+                                                    />
+                                                </li>
+                                            </>
+                                        )
+                                    }
+                                )
+                            }
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </>
-    )
+            </>
+        )
 }
 
 export default Home
