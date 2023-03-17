@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+.card{
+    position: relative;
+    background-color: #BAD7E9;
+    height: 20rem;
+    width: 40rem;
+    border-radius: 1.5rem;
+}
+.a1,.a2{
+    display: inline-block;
+    margin: 1rem;
+}
+.a2{
+    padding-top: 0.5rem;
+    position: absolute;
+}
+.name,.type,.wait{
+    padding-bottom: 1.5rem;
+}
+.location{
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    max-width: 30rem;
+    display: inline-block;
+}
+.img{
+    width: 10rem;
+    border-radius: 1.5rem;
+}
+.card{
+    font-size: 1.5rem;
+}
+.icon{
+    display: inline;
+    position: relative;
+    float: right;
+    margin-top: 0.5rem;
+    margin-right: 3rem;
+}

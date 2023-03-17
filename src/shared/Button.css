@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn{
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    border: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.btn-primary{
+   background-color: #2B3467;
+   color: #fff;
+   text-transform: uppercase;
+}
+
+.btn:active{
+    transform: translateY(.1rem);
+}
+
+.btn-secondary{
+    background-color: #BAD7E9;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 300;
+}
