@@ -1,0 +1,17 @@
+.contain{
+    padding:10rem
+}
+
+ul{
+    margin-top: 10rem;
+    display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+}
+
+@media (max-width: 76.8rem) {
+    .card-container {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+  }

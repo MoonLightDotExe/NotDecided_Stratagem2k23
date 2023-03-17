@@ -1,14 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import doc from '../../assets/doctor-svgrepo-com.svg'
 import './Auth.css'
 
 function Auth() {
   return (
     <div className="wrap">
+       
         <div className="txt">
-            <h1>Hospital App</h1>
+            <div className="doctor">
+                <img src={doc} alt="" className='doc' />
+            </div>
             <div className="btns">
+            <h1>Hospital App</h1>
                 <Link to='/login'>
                 <button type="button" className="login">
                     <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="#EB455F" className="bi bi-person-check" viewBox="0 0 16 16">
