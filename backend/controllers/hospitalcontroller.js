@@ -43,7 +43,6 @@ router.get('/user/:user', function (req, res, next) {
 
 // add a new HospitalSchema 
 router.post('/', function (req, res, next) {
-    console.log(req.body.id);
     HospitalSchema.create(req.body).then(function (element) {
         res.send(element);
     }).catch(next);

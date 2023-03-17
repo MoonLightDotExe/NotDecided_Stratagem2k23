@@ -7,7 +7,7 @@ export function HospitalProvider({ children }) {
 
     const initialstate = {
         loading: false,
-        hospital: []
+        hospital: [],
     }
 
     const [state, dispatch] = useReducer(reducer, initialstate)
