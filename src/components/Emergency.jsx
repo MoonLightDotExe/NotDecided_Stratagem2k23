@@ -1,4 +1,7 @@
 import React from 'react'
+import { useState } from 'react'
+
+import './Emergency.css'
 
 function Emergency() {
 
@@ -17,7 +20,7 @@ function Emergency() {
         },
         {
             id:4,
-            type:'Alergical'
+            type:'Allergical'
         },
         {
             id:5,
@@ -26,14 +29,21 @@ function Emergency() {
 
     ]
 
+    const [emer , setEmer] = useState('');
+
   return (
     <>
-        <div className="emergency">
+        <div className="new">
+            <div className="name">select emergency type</div>
             <ul className="elements">
                 {
                     EMERGENCIES.map((e)=>{
                         return(
-                            <li key={e.id} > {e.type} </li>
+                            <li key={e.id} > 
+                                <div className="card_new" onClick={()=>{ setEmer(e.type) }}>
+                                    {e.type}
+                                </div>
+                            </li>
                         )
                     })
                 }

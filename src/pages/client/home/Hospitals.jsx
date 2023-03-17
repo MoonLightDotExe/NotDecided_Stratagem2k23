@@ -2,7 +2,6 @@ import React from 'react'
 
 import Card from '../../../shared/Card'
 
-import DATABASE from '../../../data/MOCK';
 import logo from '../../../assets/logo.png'
 
 import './Hospitals.css'
@@ -15,21 +14,21 @@ function Hospitals() {
             <div className="cards">
                 <ul>
                 {
-                    DATABASE.map(
-                        (ele) => {
-                            return (
-                                <li key={DATABASE.id}> 
-                                    <Card
-                                        img={logo}
-                                        name={ele.name}
-                                        type={ele.type}
-                                        wait={ele.queue}
-                                        location={ele.address}
-                                    />
-                                </li>
-                            )
-                        }
-                    )
+                    // DATABASE.map(
+                    //     (ele) => {
+                    //         return (
+                    //             <li key={}> 
+                    //                 <Card
+                    //                     img={logo}
+                    //                     name={ele.name}
+                    //                     type={ele.type}
+                    //                     wait={ele.queue}
+                    //                     location={ele.address}
+                    //                 />
+                    //             </li>
+                    //         )
+                    //     }
+                    // )
                 }
                 </ul>
             </div>

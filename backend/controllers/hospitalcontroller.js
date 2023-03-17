@@ -49,68 +49,6 @@ router.post('/', function (req, res, next) {
     }).catch(next);
 });
 
-
-async function query(filename) {
-    const data = fs.readFileSync("uploads/" + filename)
-    const response = await axios.post(
-        'https://api-inference.huggingface.co/models/google/vit-base-patch16-224',
-        data,
-        {
-            headers: { Authorization: 'Bearer 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' },
-        }
-    );
-    const result = response.data.map((each) => {
-        return (
-            each.label
-        )
-    })
-    return result;
-}
-
-
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "uploads");
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname);
-    },
-});
-
-const upload = multer({ storage: storage });
-
-router.post('/imagePost', upload.single("image"), async (req, res) => {
-    console.log("in image post")
-    const reqObjectData = JSON.parse(req.body.objectData)
-    const modelTags = await query(req.file.filename)
-
-    // console.log(modelTags)
-
-    // console.log("in image post 2")
-    // console.log(req.body.objectData)
-    // console.log(JSON.parse(req.body.objectData))
-    console.log(reqObjectData)
-
-    // console.log(req.file)
-    HospitalSchema.create({
-        id: reqObjectData.id,
-        email: reqObjectData.email,
-        location: reqObjectData.location,
-        image: {
-            data: fs.readFileSync("uploads/" + req.file.filename),
-            contentType: "image/png"
-        },
-        caption: reqObjectData.caption,
-        tags: modelTags.concat(reqObjectData.tags),
-        time: new Date().toLocaleString('en-US', { timeZone: "Asia/Kolkata", hour: 'numeric', minute: 'numeric', hour12: true }),
-
-    })
-        .then(function (element) {
-            res.send(element);
-        }).catch();
-})
-
 // update a HospitalSchema
 router.put('/:id', function (req, res, next) {
     HospitalSchema.findOneAndUpdate({ id: req.params.id }, req.body).then(function (element) {
