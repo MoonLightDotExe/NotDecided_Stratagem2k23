@@ -2,16 +2,12 @@ import React from 'react'
 
 import Card from '../../../shared/Card'
 
+import DATABASE from './../../../data/MOCK';
 import logo from '../../../assets/logo.png'
-import useHospital from '../../../context/HospitalContext'
 
-import './Hospitals.css'
+import './Home.css'
 
-function Hospitals() {
-
-  const {hospital} = useHospital(); 
-
-  if(hospital)
+function Home() {
   return (
     <>
         <div className="contain">
@@ -19,14 +15,15 @@ function Hospitals() {
             <div className="cards">
                 <ul>
                 {
-                    hospital.map(
+                    DATABASE.map(
                         (ele) => {
                             return (
-                                <li key={ele.id}> 
+                                <li key={DATABASE.id}> 
                                     <Card
+                                        img={logo}
                                         name={ele.name}
                                         type={ele.type}
-                                        queue={ele.queue}
+                                        wait={ele.queue}
                                         location={ele.address}
                                     />
                                 </li>
@@ -41,4 +38,4 @@ function Hospitals() {
   )
 }
 
-export default Hospitals
+export default Home
