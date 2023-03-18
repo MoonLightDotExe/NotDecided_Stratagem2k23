@@ -1,4 +1,5 @@
 export default function HospitalFunctions(state, action) {
+    // eslint-disable-next-line default-case
     switch (action.type) {
         case 'SET_LOADING':
             return {
@@ -25,7 +26,7 @@ export default function HospitalFunctions(state, action) {
             let { hospital } = state;
             let filtered = [...hospital]
             const emergency = state.filter.emergency
-            if (emergency.toLowerCase() != 'all')
+            if (emergency.toLowerCase() !== 'all')
                 filtered = filtered.filter((i) => {
                     return i.type === emergency;
                 })

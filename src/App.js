@@ -5,6 +5,8 @@ import LogIn from './pages/auth/LogIn/LogIn';
 import Auth from './pages/auth/Auth';
 import Home from './pages/client/home/Home';
 import SignUp from './pages/auth/SignUp/SignUp';
+import NavBar from './components/NavBar';
+import Emergency from './components/Emergency';
 
 function App() {
   return (
@@ -12,18 +14,27 @@ function App() {
       <Router> 
         <Routes> 
           <Route exact path='/' element={
-            <Auth></Auth>
+            <Auth />
           }></Route>
           <Route path='/login' element={
-            <LogIn></LogIn>
+            <LogIn />
           }></Route>
           <Route path='/signUp' element={
-            <SignUp> </SignUp>
+            <SignUp />
           }></Route>
-          <Route path='/home' element={
-            <Home></Home>
+          <Route path='/hospitals' element={
+            <>
+              <NavBar />
+              <Home />
+            </>
           }> </Route>
-        </Routes>
+          <Route path='/emergency' element={
+            <>
+              <NavBar />
+              <Emergency />
+            </>
+          }> </Route>
+    </Routes>
       </Router>
     </>
   );

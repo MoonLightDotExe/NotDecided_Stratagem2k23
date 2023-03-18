@@ -6,7 +6,7 @@ import './Card.css'
 
 function Card({ img, name, type, wait, location, id }) {
   return (
-    <NavLink to={`/${id}`}>
+    <NavLink to={`/hospitals/${id}`}>
       <div className="card">
         <div className="a2">
           <div className="name">{name}</div>

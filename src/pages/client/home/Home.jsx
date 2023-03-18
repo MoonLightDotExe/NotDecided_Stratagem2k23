@@ -12,7 +12,6 @@ function Home() {
     if (hospital)
         return (
             <>
-
                 <div className="contain">
                     <div className="primary--text"> Hospitals </div>
                     <div className="cards">
@@ -22,7 +21,7 @@ function Home() {
                                     (ele) => {
                                         return (
                                             <>
-                                                <li key={ele._id}>
+                                                <li key={hospital._id}>
                                                     <Card
                                                         name={ele.name}
                                                         type={ele.type}

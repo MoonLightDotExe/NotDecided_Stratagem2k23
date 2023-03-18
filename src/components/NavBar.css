@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+.user,.hospital,.emergency{
+    position: relative;
+    display: inline;
+    background-color: #2B3467;
+    border-radius: 1rem;
+    float: right;
+    padding: 0.5rem;
+}
+.emergency,.hospital{
+    margin-right: 0.5rem;
+}
+.user{
+    float: left;
+}
+.topbar{
+    position: absolute;
+    background-color: #BAD7E9;
+    padding: 0.5rem;
+    width:100%;
+    top: 0;
+    left: 0;
+}
