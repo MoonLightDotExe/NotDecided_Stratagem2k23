@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 
 import './Emergency.css'
+import useHospital from '../context/HospitalContext'
+import Card from '../shared/Card'
 
 function Emergency() {
 
@@ -29,25 +31,45 @@ function Emergency() {
 
     ]
 
-    const [emer , setEmer] = useState('');
+    const { emerhospital } = useHospital()
 
   return (
     <>
         <div className="new">
             <div className="name">select emergency type</div>
-            <ul className="elements">
+            <form className="elements">
                 {
                     EMERGENCIES.map((e)=>{
                         return(
-                            <li key={e.id} > 
-                                <div className="card_new" onClick={()=>{ setEmer(e.type) }}>
-                                    {e.type}
-                                </div>
+                            <li key={e.id} >
+                                <label> {e.type} </label>
+                                <input type='radio' className="card_new" name='rad'/>
                             </li>
                         )
                     })
                 }
-            </ul>
+            </form>
+            <div className="near_me">
+                {
+                    emerhospital.map(
+                        (ele) => {
+                            return (
+                                <>
+                                    <li key={ele.id}>
+                                        <Card
+                                            name={ele.name}
+                                            type={ele.type}
+                                            wait={ele.queue}
+                                            location={ele.address}
+                                            id={ele.id}
+                                        />
+                                    </li>
+                                </>
+                            )
+                        }
+                    )
+                }
+            </div>
         </div>
     </>
   )

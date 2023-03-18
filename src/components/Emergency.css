@@ -23,3 +23,12 @@
     padding-top: 0;
     margin-top: 0;
 }
+
+li{
+    list-style: none;
+    padding: 1rem;
+}
+
+.near_me{
+    padding: 1rem;
+}

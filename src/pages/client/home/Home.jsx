@@ -8,21 +8,20 @@ import './Home.css'
 import useHospital from '../../../context/HospitalContext';
 
 function Home() {
-    const { emerhospital } = useHospital()
-    if (emerhospital)
+    const { hospital } = useHospital()
+    if (hospital)
         return (
             <>
-
                 <div className="contain">
                     <div className="primary--text"> Hospitals </div>
                     <div className="cards">
                         <ul>
                             {
-                                emerhospital.map(
+                                hospital.map(
                                     (ele) => {
                                         return (
                                             <>
-                                                <li key={emerhospital._id}>
+                                                <li key={hospital._id}>
                                                     <Card
                                                         name={ele.name}
                                                         type={ele.type}
