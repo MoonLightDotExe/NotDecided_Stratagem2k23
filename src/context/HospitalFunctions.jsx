@@ -26,12 +26,12 @@ export default function HospitalFunctions(state, action) {
             let filtered = [...hospital]
             const emergency = state.filter.emergency
             if (emergency.toLowerCase() != 'all')
-            filtered = filtered.filter((i) => {
-                return i.type === emergency;
-            })
+                filtered = filtered.filter((i) => {
+                    return i.type === emergency;
+                })
             return {
                 ...state,
-                emerhospital : filtered
+                emerhospital: filtered
             }
     }
 }
