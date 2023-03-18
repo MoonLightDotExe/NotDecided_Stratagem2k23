@@ -1,0 +1,10 @@
+.profile-page{
+    margin-top: 20vh;
+}
+.profile-div{
+    padding: 1rem 2rem;
+    font-size: medium;
+}
+.profile-div input, .profile-div textarea{
+    padding: 0.5rem;
+}

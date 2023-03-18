@@ -2,61 +2,61 @@ const express = require("express")
 const router = express.Router()
 const  PatientSchema = require("../models/PatientSchema.js")
 
-// Get All UserSchema
+// Get All PatientSchema
 router.get('/', function (req, res, next) {
-    UserSchema.find({}).then(function (element) {
+    PatientSchema.find({}).then(function (element) {
         res.send(element);
     }).catch(next);
 });
 
-//Get One UserSchema
+//Get One PatientSchema
 router.get('/id/:id', function (req, res, next) {
-    UserSchema.findOne({id: req.params.id}).then(function(element){
+    PatientSchema.findOne({id: req.params.id}).then(function(element){
         res.send(element);
     }).catch(next);
 });
 
-//Get One UserSchema by email
+//Get One PatientSchema by email
 router.get('/user/one/:email', function (req, res, next) {
-    UserSchema.findOne({email: req.params.email}).then(function(element){
+    PatientSchema.findOne({email: req.params.email}).then(function(element){
         res.send(element);
     }).catch(next);
 });
 
-//Get all UserSchema By email
+//Get all PatientSchema By email
 router.get('/user/:email', function (req, res, next) {
-    UserSchema.find({email: req.params.email}).then(function(element){
+    PatientSchema.find({email: req.params.email}).then(function(element){
         res.send(element);
     }).catch(next);
 });
 
-// add a new UserSchema 
+// add a new PatientSchema 
 router.post('/',function(req,res,next){
     console.log(req.body.id);
-    UserSchema.create(req.body).then(function(element){
+    PatientSchema.create(req.body).then(function(element){
         res.send(element);
     }).catch(next);
 });
 
-// update a UserSchema
+// update a PatientSchema
 router.put('/:id',function(req,res,next){
-    UserSchema.findOneAndUpdate({id: req.params.id},req.body).then(function(element){
-        UserSchema.findOne({id: req.params.id}).then(function(element){
+    PatientSchema.findOneAndUpdate({id: req.params.id},req.body).then(function(element){
+        PatientSchema.findOne({id: req.params.id}).then(function(element){
             res.send(element);
         });
     });
 });
 
-// delete a UserSchema 
+// delete a PatientSchema 
 router.delete('/:id',function(req,res,next){
-    UserSchema.findOneAndDelete({id: req.params.id}).then(function(element){
+    PatientSchema.findOneAndDelete({id: req.params.id}).then(function(element){
         res.send(element);
     });
 });
 
-// delete all UserSchema
+// delete all PatientSchema
 router.delete('/',function(req,res,next){
-    UserSchema.deleteMany(req.body).then(function(element){
+    PatientSchema.deleteMany(req.body).then(function(element){
         res.send(element);
     }).catch(next);
 });

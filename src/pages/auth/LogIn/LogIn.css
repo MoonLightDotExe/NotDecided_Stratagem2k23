@@ -45,21 +45,21 @@
     color: white;
 }
 
-input {
+/* input {
     flex-grow: 2;
     border: none;
     height: 2rem;
     width: 80%;
-}
+} */
 
 input:focus {
     outline: none;
 }
-
+/* 
 label{
     padding-bottom: 1rem;
     padding-top: .21rem;
-}
+} */
 
 .submit{
     background-color: #2B3467;

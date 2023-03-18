@@ -37,7 +37,7 @@ function Emergency() {
     <>
         <div className="new">
             <div className="name">select emergency type</div>
-            <div className="elements">
+            <form className="elements">
                 {
                     EMERGENCIES.map((e)=>{
                         return(
@@ -48,7 +48,7 @@ function Emergency() {
                         )
                     })
                 }
-            </div>
+            </form>
             <div className="near_me">
                 {
                     emerhospital.map(

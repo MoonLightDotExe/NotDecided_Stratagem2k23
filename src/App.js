@@ -7,6 +7,7 @@ import Home from './pages/client/home/Home';
 import SignUp from './pages/auth/SignUp/SignUp';
 import NavBar from './components/NavBar';
 import Emergency from './components/Emergency';
+import Profile from './pages/client/Profile';
 
 function App() {
   return (
@@ -32,6 +33,12 @@ function App() {
             <>
               <NavBar />
               <Emergency />
+            </>
+          }> </Route>
+          <Route path='/profile' element={
+            <>
+              <NavBar />
+              <Profile />
             </>
           }> </Route>
     </Routes>
