@@ -3,10 +3,15 @@ import React from 'react'
 import Card from '../../../shared/Card'
 
 import logo from '../../../assets/logo.png'
+import useHospital from '../../../context/HospitalContext'
 
 import './Hospitals.css'
 
 function Hospitals() {
+
+  const {hospital} = useHospital(); 
+
+  if(hospital)
   return (
     <>
         <div className="contain">
@@ -14,21 +19,20 @@ function Hospitals() {
             <div className="cards">
                 <ul>
                 {
-                    // DATABASE.map(
-                    //     (ele) => {
-                    //         return (
-                    //             <li key={}> 
-                    //                 <Card
-                    //                     img={logo}
-                    //                     name={ele.name}
-                    //                     type={ele.type}
-                    //                     wait={ele.queue}
-                    //                     location={ele.address}
-                    //                 />
-                    //             </li>
-                    //         )
-                    //     }
-                    // )
+                    hospital.map(
+                        (ele) => {
+                            return (
+                                <li key={ele.id}> 
+                                    <Card
+                                        name={ele.name}
+                                        type={ele.type}
+                                        queue={ele.queue}
+                                        location={ele.address}
+                                    />
+                                </li>
+                            )
+                        }
+                    )
                 }
                 </ul>
             </div>
