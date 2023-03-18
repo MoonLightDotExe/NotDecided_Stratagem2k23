@@ -8,8 +8,8 @@ export function HospitalProvider({ children }) {
     const initialstate = {
         loading: false,
         hospital: [],
-        emerhospital : [],
-        filter:{
+        emerhospital: [],
+        filter: {
             emergency: "",
         }
     }
@@ -27,15 +27,15 @@ export function HospitalProvider({ children }) {
         }
     }
 
-    const updateFilterValue = (event) =>{
+    const updateFilterValue = (event) => {
         let value = event.target.value;
-        return dispatch({type: 'UPDATE_FILTER_VALUE' ,payload:{value}})
+        return dispatch({ type: 'UPDATE_FILTER_VALUE', payload: { value } })
     }
 
-    useEffect(()=>{
-        dispatch({type: 'FILTER_PRODUCTS'})
-    },[state.filter])
-    
+    useEffect(() => {
+        dispatch({ type: 'FILTER_PRODUCTS' })
+    }, [state.filter])
+
     useEffect(() => {
         getHospitals()
     }, [])

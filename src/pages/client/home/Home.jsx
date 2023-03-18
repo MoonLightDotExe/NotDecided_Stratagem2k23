@@ -2,7 +2,7 @@ import React from 'react'
 
 import Card from '../../../shared/Card'
 
-import logo from '../../../assets/logo.png'
+// import logo from '../../../assets/logo.png'
 
 import './Home.css'
 import useHospital from '../../../context/HospitalContext';
@@ -26,7 +26,7 @@ function Home() {
                                                     <Card
                                                         name={ele.name}
                                                         type={ele.type}
-                                                        queue={ele.queue}
+                                                        wait={ele.queue}
                                                         location={ele.address}
                                                         id={ele.id}
                                                     />
