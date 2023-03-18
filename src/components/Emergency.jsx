@@ -31,24 +31,24 @@ function Emergency() {
 
     ]
 
-    const { emerhospital } = useHospital()
+    const { emerhospital, updateFilterValue } = useHospital()
 
   return (
     <>
         <div className="new">
             <div className="name">select emergency type</div>
-            <form className="elements">
+            <div className="elements">
                 {
                     EMERGENCIES.map((e)=>{
                         return(
                             <li key={e.id} >
                                 <label> {e.type} </label>
-                                <input type='radio' className="card_new" name='rad'/>
+                                <input value={e.type} type='radio' className="card_new" name='rad' onClick={updateFilterValue}/>
                             </li>
                         )
                     })
                 }
-            </form>
+            </div>
             <div className="near_me">
                 {
                     emerhospital.map(

@@ -25,9 +25,12 @@ export default function HospitalFunctions(state, action) {
         case 'FILTER_PRODUCTS':
             let { hospital } = state;
             let filtered = [...hospital]
-            const emergency = state.filter.emergency
-            if (emergency.toLowerCase() !== 'all')
+            const emergency = state.filter.emergency.toLowerCase()
+            console.log(emergency)
+            if (emergency != 'all')
                 filtered = filtered.filter((i) => {
+                    if(i.type=='all')
+                    return true
                     return i.type === emergency;
                 })
             return {

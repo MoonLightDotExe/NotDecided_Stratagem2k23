@@ -11,10 +11,6 @@ const PatientSchema = new Schema({
             type: String,
             required :true,
         },
-        emergencyType: {
-            type: String,
-            required: true,
-        },
         location:{
             type : String,
             required : true,
